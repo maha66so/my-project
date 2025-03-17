@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<style type = "text/css">
+
+		h1 {text-align: center; font-family: cursive; color: #593f25; font-size: 30pt;}
+			
+		header {
+			background: url(headerimg.png) no-repeat center center; /* Set background image */
+			background-size: cover; /* Ensure it covers the entire header */
+			width: 100%;
+			height: 100px;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 1000;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+		}
+		
+		.nav-line {
+            background-color: #783f04;
+            width: 100%;
+            height: 40px;
+            position: fixed;
+            top: 100px; /* Directly under the header */
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+			z-index: 900;
+        }
+
+        .nav-line a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+		body {
+			background: #fce5cd;
+			background-image: url(cake.png), url(cake.png);
+			background-position: bottom right, bottom left;
+			background-repeat: repeat-y, repeat-y;
+			background-attachment: fixed, fixed;
+			background-size: 107px auto, 107px auto;
+        }
+		
+		h2 {
+            margin-top: 200px; /* Ensure it appears below the fixed header */
+            text-align: center;
+			font-family: cursive;
+			color: brown;
+			margin-bottom: 30px;
+        }
+        #table2 {
+            float: left;
+            margin-left: 250px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 300px;
+			margin-left: 170px;
+        }
+        th, td {
+            border: 2px solid brown;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #d2b48c;
+        }
+        #coky {
+            float: right;
+            margin-right: 470px;
+        }
+        #cookieSteps {
+            clear: both;
+        }
+        ol {
+            margin-left: 200px;
+			margin-top: 300px;
+			font-family: cursive;
+			font-size: 14pt;
+			color: brown;
+        }
+		
+		.rating-form {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .rating-form label {
+            font-family: cursive;
+            font-size: 14pt;
+            color: brown;
+        }
+
+        .rating-form input[type="radio"] {
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .rating-form button {
+            background-color: #783f04;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 12pt;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .rating-form button:hover {
+            background-color: #593f25;
+        }
+	
+		footer {
+			text-align: center;
+			width: 100%;
+			padding: 10px 0;
+		}
+
+	</style>
+	
+	<script type="text/javascript">
+        // JavaScript function to validate the rating form
+        function validateRating() {
+            var rating = document.querySelector('input[name="rating"]:checked');
+            var message = document.getElementById('ratingMessage');
+            if (rating) {
+                message.textContent = "Thank you for your feedback!";
+                message.style.color = "green";
+            } else {
+                message.textContent = "Please select a rating from 1 to 5.";
+                message.style.color = "red";
+                return false;  // Prevent form submission if no rating is selected
+            }
+            return false;  // Prevent form submission for demo purposes
+        }
+    </script>
+
+	 <mata charset = "UFT-8">
+	 <title> Cookies Recipe </title> 
+
+</head>
+
+<body>
+
+	<header> 
+
+	 <h1> Sweet Delights </h1>
+
+	</header>
+	
+	<nav class="nav-line">
+        <a href="home page.html"> Home Page</a>
+        <a href="page2.html"> Choco Cake </a>
+        <a href="page3.html"> Cookies </a>
+        <a href="page4.html"> Cubcake </a>
+        <a href="page5.html"> Pancake </a>
+    </nav>
+	
+	<h2> Simple Cookies Recipe </h2>
+	
+	<div id = "coky">	
+		<img src = "cookie img.png" width = "225px" height = "225px">
+	</div>
+	
+	<div id = "table2">
+		<table>
+        <tr>
+            <th>Ingredients</th>
+            <th>Amount</th>
+        </tr>
+        <tr><td> brown sugar </td><td> 1 &frac12 cups </td></tr>
+        <tr><td> softened butter </td><td> 1 cup </td></tr>
+        <tr><td> eggs </td><td> 2 </td></tr>
+        <tr><td> all-purpose flour </td><td> 3 cups </td></tr>
+        <tr><td> chocolate chips </td><td> 1 &frac12 cups </td></tr>
+    </table>
+	</div>
+	
+	<div id = "cookieSteps">
+		<ol>
+			<li> Gather the ingredients. Preheat the oven to 350 degrees F (175 degrees C). </li>
+			<li> Stir sugar, flour, cocoa, baking powder, baking soda, and salt together in a large bowl. </li>
+			<li> Beat sugar and butter together in a large bowl with an electric mixer until light and fluffier in texture. <br>
+			Beat in eggs, one at at time. Gradually stir in flour until well combined; fold in chocolate chips. </li>
+			<li> Spoon dough onto a baking sheet, keeping them about 2 inches apart. <br>
+			Bake in the preheated oven until edges are golden brown, 10 to 15 minutes. </li>
+			<li> Ready to serve! </li>
+		</ol>
+	</div>
+	
+	<div class="rating-form">
+        <form id="ratingForm" onsubmit="return validateRating();">
+            <label for="rating">Rate this recipe from 1 to 5:</label><br>
+            <input type="radio" id="rating1" name="rating" value="1"> 1
+            <input type="radio" id="rating2" name="rating" value="2"> 2
+            <input type="radio" id="rating3" name="rating" value="3"> 3
+            <input type="radio" id="rating4" name="rating" value="4"> 4
+            <input type="radio" id="rating5" name="rating" value="5"> 5
+            <br><br>
+            <button type="submit">Submit Rating</button>
+        </form>
+        <p id="ratingMessage" style="color: brown; font-family: cursive;"></p>
+    </div>
+		
+	<footer> 
+        <p> &copy; Web Programming Project 2025 </p> 
+	</footer>
+
+</body>
+
+</html>
